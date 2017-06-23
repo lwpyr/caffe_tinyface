@@ -300,8 +300,8 @@ void tinyFaceDetector::run(MODEL m) {
 				fc.copyTo(temp_reg_box.colRange(4, 5));
 				scores.copyTo(temp_reg_box.colRange(5, 6));
 				reg_box = mergeCols(reg_box, temp_reg_box);
-				delete blobData;
 			}
+			delete blobData;
 		}
 		cv::Mat valid_box = nms(reg_box, nmsthresh);
 		img_num++;
